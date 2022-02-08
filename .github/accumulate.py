@@ -10,11 +10,11 @@ repo_heads = repo.heads
 
 print ('Current branch is: ', repo.active_branch)
 
-print 'All branches are: '
+print ('All branches are: ')
 for head in repo_heads:
     print head.name
 
-print 'All remote branches are: '
+print ('All remote branches are: ')
 for refs in remote_refs:
     print refs.name
 
