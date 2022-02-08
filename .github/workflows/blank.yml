@@ -1,0 +1,26 @@
+name: Intent File Management
+
+on:
+  pull_request:
+    branches: [master]
+    types: [closed]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install Python3
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.x"
+
+      - name: Install Dependencies
+        run: |
+          chmod +x ./.github/intall-py-dependecies.sh
+          ./.github/intall-py-dependecies.sh
+
+      - name: Run Python Script
+        run: python ./.github/accumulate.py
