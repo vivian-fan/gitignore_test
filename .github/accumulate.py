@@ -1,3 +1,12 @@
+import git
+
+repo = git.Repo('.')
+remote_refs = repo.remote().refs
+
+print('All remote branches as following: ')
+for refs in remote_refs:
+    print(refs.name)
+
 # Now is on feature branch
 
 # Step1: read intent.yml from feature branch
