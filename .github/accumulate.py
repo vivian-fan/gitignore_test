@@ -1,4 +1,5 @@
 import git
+import yaml
 
 repo = git.Repo('.')
 remote_refs = repo.remote().refs
@@ -15,6 +16,10 @@ for head in repo_heads:
 print('All remote branches are: ')
 for refs in remote_refs:
     print(refs.name)
+ 
+ print('intent file content from master: ')
+ with open('./intent.yml', 'r') as f:
+    print(yaml.safe_load(f))
 
 # Now is on feature branch
 branch_name = 'feature-1'
@@ -23,6 +28,10 @@ new_branch = repo.create_head(branch_name, origin.refs[branch_name])
 new_branch.checkout()
 
 print('Current branch is: ', repo.active_branch)
+
+print('intent file content from feature-1: ')
+with open('./intent.yml', 'r') as f:
+   print(yaml.safe_load(f))
 
 # Step1: read intent.yml from feature branch
 
