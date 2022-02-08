@@ -1,5 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
 import git
 import yaml
 
@@ -12,11 +10,11 @@ print ('Current branch is: ', repo.active_branch)
 
 print ('All branches are: ')
 for head in repo_heads:
-    print head.name
+    print (head.name)
 
 print ('All remote branches are: ')
 for refs in remote_refs:
-    print refs.name
+    print (refs.name)
 
 with open('./.github/intent.yml', 'r') as f:
     print ('internal on master ', yaml.safe_load(f))
