@@ -20,11 +20,9 @@ for refs in remote_refs:
 branch_name = 'feature-1'
 origin = repo.remotes.origin
 new_branch = repo.create_head(branch_name, origin.refs[branch_name])
+new_branch.checkout()
 
-print('New all branches are: ')
-for head in repo_heads:
-    print(head.name)
-
+print('Current branch is: ', repo.active_branch)
 
 # Step1: read intent.yml from feature branch
 
