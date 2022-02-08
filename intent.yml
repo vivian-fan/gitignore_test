@@ -1,5 +1,4 @@
 intent:
-  internal: [major, minor]
-  external: [major, major]
-  data_science: [major, major]
-  opportunity: [minor, major]
+  internal: []
+  external: []
+  data_science: []
