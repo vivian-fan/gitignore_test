@@ -17,8 +17,8 @@ print('All remote branches are: ')
 for refs in remote_refs:
     print(refs.name)
  
- print('intent file content from master: ')
- with open('./intent.yml', 'r') as f:
+ print('internal intent file content from master: ')
+ with open('./.github/intent.yml', 'r') as f:
     print(yaml.safe_load(f))
 
 # Now is on feature branch
